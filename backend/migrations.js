@@ -5,7 +5,7 @@ const path = require("path");
 const umzug = new Umzug({
   storage: new SequelizeStorage({ sequelize: db.sequelize }),
   migrations: {
-      glob: path.resolve(__dirname, './migrations') + '/*.js',
+    glob:  './db/migrations/*.js',
   },
   context: db.sequelize.getQueryInterface(),
   // We currently do not make use of the logging feature; therefore switching it off

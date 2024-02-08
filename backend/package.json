@@ -27,7 +27,7 @@
     "build-dev": "npm run clean-db && npm run copy-dev-config && npm run webpack-build-dev",
     "build-prod": "npm run clean-db && npm run copy-prod-config && npm run webpack-build-prod",
     "pm2": "pm2 start processes.json --no-daemon",
-    "local-dev": "npm run clean-db && npm run copy-dev-config && npm run watch:webpack-build-dev"
+    "local-dev": "npm run copy-dev-config && npm run watch:webpack-build-dev"
   },
   "eslintConfig": {
     "extends": [
