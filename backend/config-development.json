@@ -11,8 +11,16 @@
     {
       "username": "martinmfischer",
       "password": "martinmfischer"
+    },    
+    {
+      "username": "annaskuempel",
+      "password": "annaskuempel"
+    },
+    {
+      "username": "luisemanter",
+      "password": "luisemanter"
     }
   ],
   "secret": "mysecret",
-  "secretUser": ""
+  "secretUser": "secretUser"
 }

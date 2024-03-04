@@ -13,6 +13,7 @@ import ShareAnywayModal from "./ShareAnywayModal";
 import "./Post.css";
 
 const PostBottom = ({ id, omitInteractionBar }) => {
+  
   const postMetadata = useSelector(state => selectPostsMetadata(state, id));
   const socialMediaTranslations = useSelector(state => state.socialMedia.socialMediaTranslations);
   const userRegisterData = useSelector(state => state.userRegister.metaData);
@@ -23,10 +24,14 @@ const PostBottom = ({ id, omitInteractionBar }) => {
   const [modalShareOpen , setModalShareOpen] = useState(false);
   const [display, setDisplay] = useState(false);
   const dispatch = useDispatch();
+  postMetadata.hasBeenLiked = 0;
+  
 
-  const handleToggleLike = (e) => {
+  function handleToggleLike(e) {
     e.preventDefault();
     if (postMetadata.actionId) {
+      postMetadata.initLike += -1;
+      console.log("decrementing likes!");
       dispatch(unlikeFbPost(postMetadata.actionId, id));
     } else {
       const data = {
@@ -34,10 +39,13 @@ const PostBottom = ({ id, omitInteractionBar }) => {
         comment: null,
         userPostId: id,
       };
+      console.log("incrementing likes!");
+      postMetadata.initLike += 1;
       dispatch(likeFbPost(data, id));
+      
     }
     setDisplay(false);
-  };
+  }
 
   const toggleComment = () => {
     setOpenCommentBox(!openCommentBox);
@@ -70,7 +78,7 @@ const PostBottom = ({ id, omitInteractionBar }) => {
       setModalOpen(!modalOpen);
     }
   }
-
+  
   const handleReactions = async (reaction) => {
     setDisplay(false);
     // fire the actual action event
@@ -82,7 +90,7 @@ const PostBottom = ({ id, omitInteractionBar }) => {
     };
     await dispatch(likeFbPost(data, id));
   }
-
+  //console.log("In PostBottom.jsx: we have the following postmetadata.comments.length:  " + postMetadata?.comments?.length.toString());
   return (
     <>
     {!omitInteractionBar &&
@@ -90,9 +98,14 @@ const PostBottom = ({ id, omitInteractionBar }) => {
         <div className="postActionsContainer">
           <div className="postAction reactionContainer childrenReactions">
             {display && <FacebookSelector onSelect={handleReactions} iconSize={30} />}
+            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+              <div className={"likeEmojiPositioning"}></div>
+              <div className={postMetadata.like.toLowerCase() + 'Emoji'}></div>
+              <div>{postMetadata.initLike+postMetadata.hasBeenLiked}</div>
+            </div>            
           </div>
           <div className="postAction totalComments">
-            <p>{(postMetadata?.comments?.length.toString() || "0") + " " + (socialMediaTranslations?.comments || FB_TRANSLATIONS_DEFAULT?.COMMENTS)}</p>
+            <p>{((postMetadata?.comments?.length + postMetadata?.initReply) || "0") + "  " + (socialMediaTranslations?.comments || FB_TRANSLATIONS_DEFAULT?.COMMENTS)}</p>
           </div>
         </div>
         <div className="postOptions">

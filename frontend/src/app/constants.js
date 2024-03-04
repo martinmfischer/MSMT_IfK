@@ -151,19 +151,19 @@ export const USER_LOGIN = Object.freeze({
 });
 
 export const FB_TRANSLATIONS_DEFAULT = Object.freeze({
-  LIKE: 'Like',
+  LIKE: 'Gefällt mir',
   LOVE: 'Love',
   HAHA: 'Haha',
-  ANGRY: 'Angry',
-  SAD: 'Sad',
+  ANGRY: 'Wütend',
+  SAD: 'Traurig',
   WOW: 'Wow',
 
-  CREATE: 'Create',
-  COMMENT: 'Comment',
-  POST: 'Post',
-  SHARE: 'Share',
-  WRITE_A_COMMENT: 'Write a comment...',
-  WHATS_ON_YOUR_MIND: 'What\'s on your mind?',
+  CREATE: 'Erstellen',
+  COMMENT: 'Kommentieren',
+  POST: 'Posten',
+  SHARE: 'Teilen',
+  WRITE_A_COMMENT: 'Schreibe einen Kommentar...',
+  WHATS_ON_YOUR_MIND: 'Was machst du gerade?',
 
   WRITE_POST: 'Write Post',
   CREATE_POST: 'Create Post',
@@ -173,7 +173,7 @@ export const FB_TRANSLATIONS_DEFAULT = Object.freeze({
   FEELING: 'Feeling',
   ACTIVITY: 'Activity',
   ADD_TO_YOUR_POST: 'Add to Your Post',
-  COMMENTS: 'Comments'
+  COMMENTS: 'Kommentare'
 });
 
 export const USER_TRANSLATIONS_DEFAULT = Object.freeze({
@@ -216,16 +216,16 @@ export const USER_TRANSLATIONS_DEFAULT = Object.freeze({
   NO_LIKED_OR_COMMENTED_POSTS: 'No liked or commented posts!',
   ACTION: 'Action',
   COMMENT: 'Comment',
-  LIKE: 'Like',
+  LIKE: 'Gefällt mir',
   LOVE: 'Love',
   HAHA: 'Haha',
-  ANGRY: 'Angry',
-  SAD: 'Sad',
+  ANGRY: 'Wütend',
+  SAD: 'Traurig',
   WOW: 'Wow'
 });
 
 export const WINDOW_GLOBAL = Object.freeze({
-  RELOAD_ALERT_MESSAGE: 'If you reload this page, you might loose the data, Are you sure?'
+  RELOAD_ALERT_MESSAGE: 'If you reload this page, you might lose the data, Are you sure?'
 });
 
 export const TW_TRANSLATIONS_DEFAULT = Object.freeze({

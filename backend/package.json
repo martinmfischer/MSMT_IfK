@@ -24,8 +24,8 @@
     "clean-db": "rm -rf ./db && mkdir -p ./db",
     "copy-dev-config": "cp ./config-development.json ./db/config-development.json",
     "copy-prod-config": "cp ./config-production.json ./db/config-production.json",
-    "build-dev": "npm run clean-db && npm run copy-dev-config && npm run webpack-build-dev",
-    "build-prod": "npm run clean-db && npm run copy-prod-config && npm run webpack-build-prod",
+    "build-dev": "npm run copy-dev-config && npm run webpack-build-dev",
+    "build-prod": "npm run copy-prod-config && npm run webpack-build-prod",
     "pm2": "pm2 start processes.json --no-daemon",
     "local-dev": "npm run copy-dev-config && npm run watch:webpack-build-dev"
   },
