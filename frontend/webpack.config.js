@@ -136,7 +136,12 @@ module.exports = function(_env, argv) {
     devServer: {
       compress: true,
       historyApiFallback: true,
-      open: true
+      open: true,
+      allowedHosts: [
+          'msmt.phil.tu-dresden.de',
+          'www.msmt.phil.tu-dresden.de'
+
+      ],
     }
   };
 };

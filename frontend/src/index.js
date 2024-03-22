@@ -5,7 +5,7 @@ const path = require('path');
 var cors = require('cors');
 
 const app = express();
-
+console.log("We are running the index.js file!");
 app.use(cors());
 
 // parse requests of content-type - application/json

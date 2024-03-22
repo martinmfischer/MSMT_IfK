@@ -130,7 +130,8 @@ try {
   // no port or 80 is for local development using decker dec
   // origin: 'http://localhost'
   var corsOptions = {
-    origin: environment === 'development' ? ['http://localhost', 'http://localhost:8080'] : ['https://studysocial.media', 'https://www.studysocial.media'],
+    //origin: environment === 'development' ? [/*'http://localhost', 'http://localhost:8080',*/ '141.76.57.141:8080','141.76.57.141', 'http://141.76.57.141', 'http://141.76.57.141:8080'] : ['https://msmt.phil.tu-dresden.de', 'https://www.msmt.phil.tu-dresden.de', '141.76.57.141', 'http://141.76.57.141'],
+    origin: environment === 'development' ? ['https://msmt.phil.tu-dresden.de', 'https://www.msmt.phil.tu-dresden.de','141.76.57.141:8080','141.76.57.141', 'http://141.76.57.141', 'http://141.76.57.141:8080'] : ['https://msmt.phil.tu-dresden.de', 'https://www.msmt.phil.tu-dresden.de', '141.76.57.141', 'http://141.76.57.141'],
   };
 
   app.use(cors(corsOptions));

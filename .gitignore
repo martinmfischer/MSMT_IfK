@@ -30,3 +30,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+/frontend/another nginx.dev.conf backup
+/frontend/nginx.dev.backup
+
